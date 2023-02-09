@@ -14,7 +14,7 @@ const expiresToSeconds = (expires: Date) => {
     const now = new Date();
     const expiresDate = new Date(expires);
     const secondsDelta = (expiresDate.getTime() - now.getTime())/1000;
-    return secondsDelta < 0 ? 0 : secondsDelta;
+    return secondsDelta < 0 ? 0 :  Math.floor(secondsDelta);
 };
 
 type redisSessionArguments = {
